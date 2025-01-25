@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+
+:root{
+  --white: white;
+  --dark-grey: #9b9996;
+  --light-purple: #54416d;
+  --purple: #31255a;
+  --dark-purple: #2b235a;
+  --light-blue: #8fe0ff;
+  --blue: #75b4e3;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: black;
+  background-size: cover;
+  color: var(--white);
+}
+
+.text-dark-grey{
+  color: var(--dark-grey);
+}
+
+.more-info-container{
+  background: linear-gradient(to top, rgba(43, 35, 90, .8), rgba(84, 65, 109, .8));
+  box-shadow: 0 0 4px #fff;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.more-info-title{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: var(--dark-grey);
+}
+
+.more-info-tile-border{
+  display: inline-block;
+  background-image: linear-gradient(to right, var(--light-purple), rgb(83, 33, 83));
+  border-radius: 20px;
+  padding: 1px;
+  width: 100%;
+}
+
+.more-info-tile{
+  border-radius: 20px;
+  background-color: rgba(43, 35, 90, .7);
+  padding: 10px;
+}
+
+.forecast-card{
+  background-color: rgba(255, 255, 255, .08);
+  box-shadow: .5px .5px 5px #000000;
+  border-radius: 30px;
+  padding: 20px 4px;
+  width: 3.6rem;
+}
+
+.current-forecast{
+  background-color: black;
+}
+
+.forecast-time{
+  font-size: 14px;
+}
+
+.forecast-icon{
+  min-width: 40px;
+}
+
+.forecast-temp{
+  font-size: 11px;
+}
+
+.change-location-input{
+  background-color: blue;
+}
