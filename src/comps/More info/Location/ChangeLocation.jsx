@@ -16,6 +16,19 @@ export default function ChangeLocation({ isChangeOpen, setIsChangeOpen, newLocat
         leave: { transform: "translateY(150%)" },
     })
 
+    const handleLocalLocation = () => {
+        navigator.geolocation.getCurrentPosition(position => {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            const currentPosition = `${latitude},${longitude}`
+            setNewLocation(currentPosition);
+        }, error => {
+            console.error(`Got error: ${error}`)
+            console.log(`Setting New York as the fallback location...`)
+            setNewLocation("New York");
+        })
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setNewLocation(locationName);
@@ -46,7 +59,7 @@ export default function ChangeLocation({ isChangeOpen, setIsChangeOpen, newLocat
                                         className="border-2 border-red-500">
                                             Change location
                                         </button>
-                                        <button type="button">Use your location</button>
+                                        <button type="button" onClick={handleLocalLocation}>Use your location</button>
                                     </animated.form>
                                 )
                         )}
