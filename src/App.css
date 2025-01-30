@@ -26,6 +26,27 @@ body{
 }
 
 
+.loader-wrapper{
+  background: linear-gradient(to bottom, #D3D3D3, #A9A9A9);
+  transition: all 1.5s ease-in-out;
+}
+
+.loader-out{
+  transform: translateY(-200%);
+}
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: #000 #0000;
+  animation: l1 1s infinite;
+  user-select: none;
+}
+@keyframes l1 {to{transform: rotate(.5turn)}}
+
+
 /* Gradient for homepage text at day and night */
 .hp-gradient-day{
   background-image: radial-gradient(circle closest-corner at 50% 50%, rgba(0, 43, 54, 0.7), rgba(35, 78, 112, 0.8));

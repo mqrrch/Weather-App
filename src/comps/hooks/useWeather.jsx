@@ -40,7 +40,7 @@ export default function useWeather(apiKey, setCurrentTime, newLocation){
     const fetchWeather = async (location) => {
         try {
             const response = await fetch(
-                `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=1&aqi=yes&alerts=yes`
+                `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=1&aqi=yes&alerts=yes`
             );
 
             // If the response failed, we fetch the data with the previous location

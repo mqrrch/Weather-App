@@ -50,7 +50,7 @@ export default function getBackgroundColor(weatherData, timeOfDayData){
             night: "linear-gradient(to bottom, #2E3B4E, #1C1C1C)" 
         },
         clear: {
-            day: "", 
+            day: "linear-gradient(to bottom, #6FCFEC, #8CD9F5)", 
             night: "linear-gradient(to bottom, #01162E, #01426D)" 
         },
         snowy: {

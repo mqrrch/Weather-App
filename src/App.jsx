@@ -1,9 +1,10 @@
 import './App.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Homepage from './comps/Homepage'
 import MoreInfo from './comps/More info/MoreInfo'
 import useWeather from './comps/hooks/useWeather';
 import Settings from './comps/Settings';
+import Loading from './comps/Loading';
 
 function App() {
   // API from WeatherAPI (https://www.weatherapi.com/)
@@ -23,7 +24,7 @@ function App() {
 
   // Loading
   if(isLoading){
-    return <p>loading...</p>
+    return <Loading isLoading={isLoading} />
   }
   
   // Get the forecast info
@@ -47,37 +48,40 @@ function App() {
   }
 
   return(
-    <div className='app-container'>
-      <Settings isSettings={isSettings}
-      setIsSettings={setIsSettings}
-      isKph={isKph}
-      setIsKph={setIsKph}
-      isFahrenheit={isFahrenheit}
-      setIsFahrenheit={setIsFahrenheit} />
+    <>
+      <Loading />
+      <div className='app-container'>
+        <Settings isSettings={isSettings}
+        setIsSettings={setIsSettings}
+        isKph={isKph}
+        setIsKph={setIsKph}
+        isFahrenheit={isFahrenheit}
+        setIsFahrenheit={setIsFahrenheit} />
 
-      <Homepage setIsSettings={setIsSettings}
-      city={data.location.name}
-      temp_c={data.current.temp_c}
-      temp_f={data.current.temp_f}
-      icon={data.current.condition.icon}
-      condition={data.current.condition.text}
-      isFahrenheit={isFahrenheit} />
+        <Homepage setIsSettings={setIsSettings}
+        city={data.location.name}
+        temp_c={data.current.temp_c}
+        temp_f={data.current.temp_f}
+        icon={data.current.condition.icon}
+        condition={data.current.condition.text}
+        isFahrenheit={isFahrenheit} />
 
-      <MoreInfo hourly_forecast={hourly_forecast}
-      location={data.location}
-      newLocation={newLocation}
-      setNewLocation={setNewLocation}
-      conditionText={conditionText}
-      wind={wind}
-      uv={uv}
-      humidity={humidity}
-      chanceOfRain={chanceOfRain}
-      astrology={astrology}
-      currentTime={currentTime}
-      setCurrentTime={setCurrentTime}
-      isFahrenheit={isFahrenheit}
-      isKph={isKph} />
-    </div>
+        <MoreInfo hourly_forecast={hourly_forecast}
+        location={data.location}
+        newLocation={newLocation}
+        setNewLocation={setNewLocation}
+        conditionText={conditionText}
+        wind={wind}
+        uv={uv}
+        humidity={humidity}
+        chanceOfRain={chanceOfRain}
+        astrology={astrology}
+        currentTime={currentTime}
+        setCurrentTime={setCurrentTime}
+        isFahrenheit={isFahrenheit}
+        isKph={isKph} />
+      </div>
+    </>
   )
 }
 
