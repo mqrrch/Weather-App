@@ -10,8 +10,6 @@
   --light-purple: #54416d;
   --purple: #31255a;
   --dark-purple: #2b235a;
-  --light-blue: #8fe0ff;
-  --blue: #75b4e3;
 }
 
 body{
@@ -27,8 +25,25 @@ body{
   color: var(--dark-grey);
 }
 
+
+/* Gradient for homepage text at day and night */
+.hp-gradient-day{
+  background-image: radial-gradient(circle closest-corner at 50% 50%, rgba(0, 43, 54, 0.7), rgba(35, 78, 112, 0.8));
+  color: rgba(0, 0, 0, 0);
+  background-clip: text;
+}
+
+.hp-gradient-night{
+  background-image: radial-gradient(circle closest-corner at 40% 60%, rgba(255,255,255, .75), rgba(255,255,255, .9));
+  color: rgba(0, 0, 0, 0);
+  background-clip: text;
+}
+
+
+/* More info styles */
 .more-info-container{
   background: linear-gradient(to top, rgba(43, 35, 90, .8), rgba(84, 65, 109, .8));
+  /* background: linear-gradient(to top, #1D71F2, #1c9cf6); */
   box-shadow: 0 0 4px #fff;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
@@ -56,12 +71,15 @@ body{
   padding: 10px;
 }
 
+
+/* Forecast styles */
 .forecast-card{
   background-color: rgba(255, 255, 255, .08);
   box-shadow: .5px .5px 5px #000000;
   border-radius: 30px;
   padding: 20px 4px;
   width: 3.6rem;
+  user-select: none;
 }
 
 .current-forecast{
@@ -74,12 +92,92 @@ body{
 
 .forecast-icon{
   min-width: 40px;
+  user-select: none;
 }
 
 .forecast-temp{
   font-size: 11px;
 }
 
+
+/* Change location styles */
 .change-location-input{
-  background-color: blue;
+  background-color: rgba(255, 255, 255, 0);
+  border-bottom: 1px solid rgba(255, 255, 255, .5);
+}
+
+.change-location-input:focus{
+  outline: none;
+  padding: 0 .2rem;
+}
+
+
+/* Media queries */
+@media only screen and (min-width: 768px){
+  .app-container{
+    display: flex;
+    height: 100vh;
+    overflow-y: hidden;
+  }
+
+  .settings-btn{
+    font-size: 1.4rem;
+  }
+
+  .homepage-container{
+    width: 50%;
+  }
+
+  .hp-city{
+    font-size: 1.8rem;
+  }
+  
+  .hp-temp{
+    margin-top: 1rem;
+    font-size: 2.8rem;
+  }
+  
+  .hp-weather{
+    max-width: 360px;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .more-info-container{
+    margin: 0;
+    max-width: 50%;
+    border-radius: 0;
+    box-shadow: none;
+    overflow-y: scroll;
+  }
+}
+
+
+@media only screen and (min-width: 1024px){
+  .settings-btn{
+    font-size: 1.6rem;
+  }
+
+  .homepage-container{
+    width: 55%;
+  }
+
+  .hp-city{
+    font-size: 2rem;
+  }
+  
+  .hp-temp{
+    margin-top: 1rem;
+    font-size: 3.8rem;
+  }
+  
+  .hp-weather{
+    max-width: 360px;
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .more-info-container{
+    max-width: 45%;
+  }
 }

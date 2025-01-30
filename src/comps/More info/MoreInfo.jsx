@@ -25,7 +25,7 @@ function MoreInfo({
 }){
 
     return(
-        <div className="more-info-container mt-44 px-4 py-8">
+        <div className="more-info-container mt-20 px-4 py-8">
             <Forecast hourly_forecast={hourly_forecast}
             currentTime={currentTime}
             setCurrentTime={setCurrentTime}

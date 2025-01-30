@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import getBackgroundColor from "../getBackgroundColor";
 
 export default function useWeather(apiKey, setCurrentTime, newLocation){
     // Data state
@@ -58,6 +59,9 @@ export default function useWeather(apiKey, setCurrentTime, newLocation){
             setTimeout(() => {
                 setIsLoading(false);
             }, 2000);
+
+            getBackgroundColor(data.current.condition.text, data.current.condition.icon);
+            
         } catch(error) {
             console.error('Error fetching data:', error)
         }
