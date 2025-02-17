@@ -6,7 +6,7 @@ export default function ChanceOfRain({ chanceOfRain }){
                     <i className="fa-solid fa-cloud-rain"></i>
                     <p>Chance of rain</p>
                 </div>
-                <div className="mt-2">
+                <div className="mt-2 more-info-desc">
                     <p>{chanceOfRain}%</p>
                 </div>
             </div>

@@ -20,7 +20,7 @@ export default function Ultraviolet({ uv }){
                     <i className="fa-solid fa-sun"></i>
                     <p>UV</p>
                 </div>
-                <div className="mt-2">
+                <div className="mt-2 more-info-desc">
                     <p>{uv}</p>
                     {/* <p>{getMessage(uv)}</p> */}
                 </div>

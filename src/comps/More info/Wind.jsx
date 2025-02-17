@@ -29,7 +29,7 @@ function Wind({ wind, isKph }){
                     <i className="fa-solid fa-wind"></i>
                     <p>Wind</p>
                 </div>
-                <div className="mt-2">
+                <div className="mt-2 more-info-desc">
                     <p>Speed: {isKph ? `${wind.wind_kph} kph` : `${wind.wind_mph} mph`}</p>
                     <p>Direction: {getDirectionName(wind.wind_dir)}</p>
                 </div>

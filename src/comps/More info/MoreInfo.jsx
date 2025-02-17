@@ -25,7 +25,7 @@ function MoreInfo({
 }){
 
     return(
-        <div className="more-info-container mt-20 px-4 py-8">
+        <div className="more-info-container mt-20 px-4 py-8 rounded-t-[30px] bg-[linear-gradient(rgba(43,35,90,.8),rgba(84,65,109,.8))] md:m-0 md:w-1/2 md:rounded-none md:shadow-none md:overflow-y-scroll">
             <Forecast hourly_forecast={hourly_forecast}
             currentTime={currentTime}
             setCurrentTime={setCurrentTime}
@@ -47,8 +47,8 @@ function MoreInfo({
 
             <Astrology astrology={astrology} />
 
-            <p className="text-center mt-8">
-                Powered by <a href="https://www.weatherapi.com/" title="Weather API" target="_blank" className="text-blue-500">WeatherAPI.com</a>
+            <p id="powered-by" className="text-center mt-8">
+                Powered by <a href="https://www.weatherapi.com/" title="Weather API" target="_blank" className="text-blue-400 hover:text-blue-500 transition-colors underline">WeatherAPI.com</a>
             </p>
         </div>
     )

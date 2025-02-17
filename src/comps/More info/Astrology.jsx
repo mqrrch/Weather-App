@@ -6,7 +6,7 @@ export default function Astrology({ astrology }){
                     <i className="fa-solid fa-globe"></i>
                     <p>Astrology</p>
                 </div>
-                <div className="mt-2">
+                <div className="mt-2 more-info-desc">
                     <p>Sunrise: {astrology.sunrise}</p>
                     <p>Sunset: {astrology.sunset}</p>
                     <p>Moonrise: {astrology.moonrise}</p>

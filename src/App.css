@@ -47,35 +47,21 @@ body{
 @keyframes l1 {to{transform: rotate(.5turn)}}
 
 
-/* Gradient for homepage text at day and night */
-.hp-gradient-day{
-  background-image: radial-gradient(circle closest-corner at 50% 50%, rgba(0, 43, 54, 0.7), rgba(35, 78, 112, 0.8));
-  color: rgba(0, 0, 0, 0);
-  background-clip: text;
-}
-
-.hp-gradient-night{
-  background-image: radial-gradient(circle closest-corner at 40% 60%, rgba(255,255,255, .75), rgba(255,255,255, .9));
-  color: rgba(0, 0, 0, 0);
-  background-clip: text;
-}
-
-
-/* More info styles */
-.more-info-container{
-  background: linear-gradient(to top, rgba(43, 35, 90, .8), rgba(84, 65, 109, .8));
-  /* background: linear-gradient(to top, #1D71F2, #1c9cf6); */
-  box-shadow: 0 0 4px #fff;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-}
-
 .more-info-title{
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 14px;
+  font-size: clamp(0.875rem, 0.813rem + 0.313vw, 1.125rem);
   color: var(--dark-grey);
+}
+
+.change-location{
+  font-size: clamp(0.75rem, 0.688rem + 0.313vw, 1rem);
+}
+
+.more-info-desc,
+#powered-by{
+  font-size: clamp(1rem, 0.938rem + 0.313vw, 1.25rem);
 }
 
 .more-info-tile-border{
@@ -99,27 +85,77 @@ body{
   box-shadow: .5px .5px 5px #000000;
   border-radius: 30px;
   padding: 20px 4px;
-  width: 3.6rem;
+  min-width: 3rem;
   user-select: none;
 }
-
 .current-forecast{
-  background-color: black;
+  background-color: rgba(0, 0, 0, .5);
 }
-
 .forecast-time{
   font-size: 14px;
 }
-
-.forecast-icon{
-  min-width: 40px;
-  user-select: none;
-}
-
 .forecast-temp{
-  font-size: 11px;
+  font-size: 12px;
+}
+@media (min-width: 1024px){
+  .forecast-card{
+    min-width: 3.6rem;
+    min-height: 160px;
+  }
+  .forecast-time{
+    font-size: 16px;
+  }
+  .forecast-temp{
+    font-size: 14px;
+  }
+}
+@media (min-width: 1280px){
+  .forecast-card{
+    min-width: 4rem;
+    min-height: 170px;
+  }
+  .forecast-time{
+    font-size: 18px;
+  }
+  .forecast-temp{
+    font-size: 16px;
+  }
+}
+@media (min-width: 1536px){
+  .forecast-card{
+    min-width: 4.3rem;
+    min-height: 190px;
+  }
+  .forecast-time{
+    font-size: 19px;
+  }
+  .forecast-temp{
+    font-size: 17px;
+  }
 }
 
+
+
+/* Gradient for homepage text at day and night */
+.hp-gradient-day{
+  background-image: radial-gradient(circle closest-corner at 50% 50%, rgba(0, 43, 54, 0.7), rgba(35, 78, 112, 0.8));
+  color: rgba(0, 0, 0, 0);
+  background-clip: text;
+}
+.hp-gradient-night{
+  background-image: radial-gradient(circle closest-corner at 40% 60%, rgba(255,255,255, .75), rgba(255,255,255, .9));
+  color: rgba(0, 0, 0, 0);
+  background-clip: text;
+}
+#hp-city{
+  font-size: clamp(1.5rem, 1.375rem + 0.625vw, 2rem);
+}
+#hp-temp{
+  font-size: clamp(3rem, 2.813rem + 0.938vw, 3.75rem);
+}
+#hp-condition{
+  font-size: clamp(1rem, 0.906rem + 0.469vw, 1.375rem);
+}
 
 /* Change location styles */
 .change-location-input{
@@ -132,73 +168,23 @@ body{
   padding: 0 .2rem;
 }
 
-
-/* Media queries */
-@media only screen and (min-width: 768px){
-  .app-container{
-    display: flex;
-    height: 100vh;
-    overflow-y: hidden;
-  }
-
-  .settings-btn{
-    font-size: 1.4rem;
-  }
-
-  .homepage-container{
-    width: 50%;
-  }
-
-  .hp-city{
-    font-size: 1.8rem;
-  }
-  
-  .hp-temp{
-    margin-top: 1rem;
-    font-size: 2.8rem;
-  }
-  
-  .hp-weather{
-    max-width: 360px;
-    margin-top: 1.5rem;
-    font-size: 1.2rem;
-  }
-
-  .more-info-container{
-    margin: 0;
-    max-width: 50%;
-    border-radius: 0;
-    box-shadow: none;
-    overflow-y: scroll;
-  }
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
 }
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
 
-@media only screen and (min-width: 1024px){
-  .settings-btn{
-    font-size: 1.6rem;
-  }
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 24px;
+}
 
-  .homepage-container{
-    width: 55%;
-  }
-
-  .hp-city{
-    font-size: 2rem;
-  }
-  
-  .hp-temp{
-    margin-top: 1rem;
-    font-size: 3.8rem;
-  }
-  
-  .hp-weather{
-    max-width: 360px;
-    margin-top: 1.5rem;
-    font-size: 1.3rem;
-  }
-
-  .more-info-container{
-    max-width: 45%;
-  }
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

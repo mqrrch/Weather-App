@@ -63,21 +63,21 @@ function Forecast({ hourly_forecast, currentTime, setCurrentTime, isFahrenheit }
             {hourly_forecast.map((item, index) => {
                 return parseInt(currentTime) === index ?
                 (
-                    <div key={index} className="text-center forecast-card current-forecast flex flex-col items-center cursor-pointer">
+                    <div key={index} className="text-center forecast-card current-forecast flex flex-col items-center justify-between cursor-pointer hover:bg-[rgba(0,0,0,0.4)] transition-colors">
                         <p className="forecast-time mb-2">{item.time.split(' ')[1]}</p>
                         <div className="forecast-img-wrapper">
                             <img src={item.condition.icon}
-                            className="forecast-icon w-full h-auto" draggable="false"></img>
+                            className="forecast-icon w-full h-auto select-none min-w-[40px]" draggable="false"></img>
                         </div>
                         <p className="forecast-temp mt-2">{isFahrenheit ? `${item.temp_f}°F` : `${item.temp_c}°C`}</p>
                     </div>
                 ) : (
-                    <div key={index} className="text-center forecast-card flex flex-col items-center cursor-pointer"
+                    <div key={index} className="text-center forecast-card flex flex-col items-center justify-between cursor-pointer hover:bg-[rgba(255,255,255,0.2)] transition-colors"
                     onClick={() => setCurrentTime(index)}>
                         <p className="forecast-time mb-2">{item.time.split(' ')[1]}</p>
                         <div className="forecast-img-wrapper">
                             <img src={item.condition.icon}
-                            className="forecast-icon w-full h-auto" draggable="false"></img>
+                            className="forecast-icon w-full h-auto select-none min-w-[40px]" draggable="false"></img>
                         </div>
                         <p className="forecast-temp mt-2">{isFahrenheit ? `${item.temp_f}°F` : `${item.temp_c}°C`}</p>
                     </div>

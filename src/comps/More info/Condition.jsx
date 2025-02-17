@@ -6,7 +6,7 @@ export default function Condition({ conditionText }){
                     <i className="fa-solid fa-cloud"></i>
                     <p>Weather Condition</p>
                 </div>
-                <div className="mt-2">
+                <div className="mt-2 more-info-desc">
                     <p>{conditionText}</p>
                 </div>
             </div>

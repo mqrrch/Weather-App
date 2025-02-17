@@ -18,7 +18,7 @@ export default function Humidity({ humidity }){
                     <i className="fa-solid fa-droplet"></i>
                     <p>Humidity</p>
                 </div>
-                <div className="mt-2">
+                <div className="mt-2 more-info-desc">
                     <p>{humidity}%</p>
                     {/* <p>{getMessage(humidity)}</p> */}
                 </div>

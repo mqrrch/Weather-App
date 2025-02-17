@@ -13,12 +13,12 @@ export default function Location({ location, newLocation, setNewLocation }){
                         <i className="fa-solid fa-location-dot"></i>
                         <p>Location</p>
                     </div>
-                    <a className="text-xs text-dark-grey underline cursor-pointer"
+                    <a className="change-location text-xs text-dark-grey underline cursor-pointer"
                     onClick={() => setIsChangeOpen(true)}>
                         Change location
                     </a>
                 </div>
-                <div className="mt-2">
+                <div className="mt-2 more-info-desc">
                     <p>Country: {location.country}</p>
                     <p>Region: {location.region}</p>
                     <p>City: {location.name}</p>

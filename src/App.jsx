@@ -50,7 +50,7 @@ function App() {
   return(
     <>
       <Loading />
-      <div className='app-container'>
+      <div className='app-container md:flex md:h-screen md:overflow-hidden'>
         <Settings isSettings={isSettings}
         setIsSettings={setIsSettings}
         isKph={isKph}
